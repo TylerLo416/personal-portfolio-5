@@ -1,0 +1,16 @@
+/* Base styles for .recentwork */
+.recentwork {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  background-color: var(--background-black, #1b1b1b); /* Dark mode default */
+  border-radius: 20px;
+  padding: 5%;
+  border: 2px solid #262626;
+}
+
+/* Light mode adjustments for .recentwork */
+body.light-mode .recentwork {
+  background-color: var(--light-background, #ffffff); /* Light mode background */
+  border: 2px solid #dddddd; /* Lighter border in light mode */
+}
+

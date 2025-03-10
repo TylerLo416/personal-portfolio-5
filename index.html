@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./resources/img/Mark.webP">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/introsection.css">
+    <link rel="stylesheet" href="./css/recentwork.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+          <nav>
+            <img class="mark" src="./resources/img/Mark.webP" alt="logo">
+            <ul class="navbar">
+              <li><a class="button" href="#introsection">About</a></li>
+              <li><a class="button" href="#portfolio">Portfolio</a></li>
+              <li><a class="button" href="./contact.html">Contact</a></li>
+              <li><button class="button" id="mode-toggle">
+                <span id="sun-icon" class="icon">☀️</span>
+                <span id="moon-icon" class="icon">🌙</span>
+                <span id="mode-text">Light/Dark Mode</span>
+              </button></li>  
+            
+              
+            </ul>
+          </nav>
+          <hr>
+          <section class="introsection" id="introsection">
+              <h2 class="fadedgray">Software Engineer</h2>
+              <aside class="container">
+                <div class="circle"></div>
+                <p class="text" id="jobavailability">Available for Job</p>
+              </aside>
+              <div class="second_row">
+                <h1 class="name whitetext">I'm Tyler Lo</h1>
+                <h3 class="fadedgray">  I develop Front-End + Full-<br>
+                Stack Applications</h3>
+                <button class="introbutton hireme whitetext" onclick="window.location.href='#contact'">Hire Me</button>
+                <button class="introbutton emailbutton fadedgray" onclick="copyEmail()">Copy Email</button>
+              </div>
+              <div id="grayCircle">
+                <picture id="portrait">
+                  <!-- Use media attribute to serve different images for different screen sizes -->
+                  <source srcset="./resources/img/me.webP" media="(min-width: 800px)">
+                  <source srcset="./resources/img/me.jpg" media="(max-width: 799px)">
+                  <!-- Fallback image if the sources do not match -->
+                  <img src="./resources/img/Mark.webP" alt="logo" width="100" height="100">
+                </picture>
+                
+              </div> 
+            </section>
+            <hr>
+            <section class="twocolumn">
+              <section class="recentwork">
+                  <h2 class="fadedgray">Recent Work</h2>
+                  <ul>
+                    <li class="date_company_color">
+                      <strong class=" title blue_title">Data Engineer</strong> – CVS <br>
+                      <em>Jun 24 - Aug 24</em>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="date_company_color">
+                      <strong class="title white_title">App Developer</strong> – Center for Energy Research <br>
+                      <em>Mar 24 - Present</em>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="date_company_color">
+                      <strong class="title white_title">ServiceNow Developer</strong> – UCSD ITS <br>
+                      <em>Nov 23 - Jun 24</em>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="date_company_color">
+                      <strong class="title white_title">Unity UI Developer</strong> – Cobey Motions <br>
+                      <em>Aug 23 - Mar 24</em>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="date_company_color">
+                      <strong class="title white_title">FrontEnd Intern</strong> – Jacobs School of Engineering <br>
+                      <em>Apr 22 - Dec 22</em>
+                    </li>
+                  </ul>
+                
+              </section>
+              <section class="skills">
+                      <b class="skill_name"> SQL </b>
+                        <div class="dot_container">
+                          <div class=" dots light_blue_dot"></div>
+                          <div class=" dots light_blue_dot"></div>
+                          <div class=" dots light_blue_dot"></div>
+                          <div class=" dots light_blue_dot"></div>
+                          <div class=" dots blue_dot"></div>
+                        </div>
+                      <b class="skill_name"> GCP </b>
+                      <div class="dot_container">
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                      </div>
+                      <b class="skill_name"> System Design</b>
+                      <div class="dot_container">
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                      </div>
+                      <b class="skill_name"> Figma</b>
+                      <div class="dot_container">
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                      </div>
+                      <b class="skill_name"> Front-End (JS) </b>
+                      <div class="dot_container">
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots light_blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                        <div class=" dots blue_dot"></div>
+                      </div>
+              </section>
+            </section>
+            <hr>
+            <section class="twocolumn" id="portfolio">
+              <article class="recentproject">
+                  <div class="top_columns">
+                    <strong class="name">LOR Hand Tracker</strong>
+                    <div></div>
+                    <a href="https://tylerlo416.github.io/LORHandReader/">
+                      <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+                    </a>   
+                  </div>
+                  <p class="description"> Front-End</p>
+                  <div class="img_holder">
+                    <img id="cardimg" src="resources/img/Summoner's-Rift.webP" alt="card image">
+                    <!-- img from Riot Games API (all other images are Figma SVG's / personal)-->
+                  </div>
+              </article>
+              <article class="recentproject">
+                  <div class="top_columns">
+                    <strong class="name">Vawt Wind Turbine</strong>
+                    <div></div>
+                    <a href="https://eswtritons.wordpress.com/urban-wind-power-charging-station/">
+                      <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+                    </a> 
+                  </div>
+                  <p class="description"> Data Lead</p>
+                  <div class="img_holder">
+                    <img id="vawt" src="resources/img/vawt.webP" alt="vawt image">
+                  </div>
+              </article>
+              <article class="recentproject">
+                <div class="top_columns">
+                  <strong class="name">Triton Energy Climate</strong>
+                  <div></div>
+                  <a href="./tec.html">
+                    <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+                  </a> 
+                </div>
+                <p class="description"> Tech Lead / Project Manager</p>
+                <div class="img_holder">
+                  <img id="vawt" src="resources/img/tec.webp" alt="vawt image">
+                </div>
+              </article>
+            </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
