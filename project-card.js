@@ -1,68 +1,85 @@
 class ProjectCard extends HTMLElement {
     constructor() {
         super();
-
-        // Create a shadow DOM for encapsulation
         const shadow = this.attachShadow({ mode: "open" });
 
-        // Define inner HTML structure
-        shadow.innerHTML = `
-            <style>
-                .top_columns {
-                    display: grid;
-                    grid-template-columns: 3fr 2fr 1fr;
-                }
-                h2 {
-                    font-size: inherit;
-                }
-                img {
-                    width: 150px;  /* Adjust to the desired size */
-                    height: auto;
-                }
-                .arrow-icon {
-                    width: 80px;
-                    margin-left: 200px;
-                    margin-right: 0px;
-                }
-            </style>
+        const style = document.createElement("style");
+        style.textContent = `
+            .top_columns {
+                display: grid;
+                grid-template-columns: 3fr 2fr 1fr;
+            }
+            .shrink-img {
+                width: 150px;  /* Adjust to the desired size */
+                height: 15px;
+            }
 
-            <article class="recentproject">
-                <div class="top_columns">
-                    <h2 class="name"><slot name="name"></slot></h2>
-                    <a href="">
-                        <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
-                    </a>   
-                </div>
-                <p class="description"><slot name="description"></slot></p>
-                <div class="img_holder">
-                    <picture id="cardimg">
-                        <source media="(min-width: 800px)" srcset="">
-                        <source media="(max-width: 799px)" srcset="">
-                        <img src="" alt="Project image">
-                    </picture>
-                </div>
-            </article>
+            .right_column {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .name {
+                color: #FFFFFF;
+                font-size: 2em;
+                font-weight: 600;
+                margin-bottom: .3em;
+            }
+
+            .description {
+                color: #C0C0C0;
+                font-size: 1.66em;
+                margin: 0;
+                margin-top: 20px;
+            }
+            
+            .name {
+                font-size: 18px;
+            }
+            .description {
+                font-size: 15px;
+            }
+
+            .img_holder {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                margin-top: 2%;
+
+
+                #cardimg {
+                width: 45%;
+                height: 45%;
+                }
+            }
         `;
 
-        // Get the elements inside the shadow DOM
-        this.link = shadow.querySelector("a");
-        this.picture = shadow.querySelector("#cardimg");
-        this.img = this.picture.querySelector("img");
-        this.sources = this.picture.querySelectorAll("source");
+        shadow.innerHTML = `
+          <article class="recentproject">
+            <div class="top_columns">
+              <h2 class="name"><slot name="name"></slot></h2>
+              <div></div>
+              <a id="project-link">
+                <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+              </a>   
+            </div>
+            <p class="description"><slot name="description"></slot></p>
+            <div class="img_holder">
+              <img id="cardimg" src="" alt="">
+            </div>
+          </article>
+        `;
+
+        shadow.appendChild(style);
+        this.link = shadow.querySelector("#project-link");
+        this.cardImg = shadow.querySelector("#cardimg");
     }
 
     connectedCallback() {
-        // Set attributes dynamically
         this.link.href = this.getAttribute("link") || "#";
-        this.img.src = this.getAttribute("image") || "default.jpg";
-        this.img.alt = this.getAttribute("alt") || "Project image";
-
-        // Set source elements for different screen sizes
-        const imageSrc = this.getAttribute("image") || "default.jpg";
-        this.sources[0].srcset = this.getAttribute("image-large") || imageSrc;
-        this.sources[1].srcset = this.getAttribute("image-small") || imageSrc;
+        this.cardImg.src = this.getAttribute("image") || "default.jpg";
+        this.cardImg.alt = this.getAttribute("alt") || "Project image";
     }
 }
 
-// Register the custom element
 customElements.define("project-card", ProjectCard);

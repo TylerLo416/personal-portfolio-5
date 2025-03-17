@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./css/recentwork.css">
     <link rel="stylesheet" href="./css/skills.css">
     <link rel="stylesheet" href="./css/projects.css">
-    <script src="script.js"></script>
     <script src="project-card.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -25,8 +25,8 @@
               <li><a class="button" href="#introsection">About</a></li>
               <li><a class="button" href="#portfolio">Portfolio</a></li>
               <li><a class="button" href="./contact.html">Contact</a></li>
-            
-              
+              <li><button type="button" class="button" id="load-local">Load Local</button></li>
+              <li><button type="button" class="button" id="load-remote">Load Remote</button></li>
             </ul>
           </nav>
           <hr>
@@ -135,26 +135,7 @@
             </section>
             <hr>
             <section class="twocolumn" id="portfolio">
-              <project-card class="recentproject" link="https://tylerlo416.github.io/LORHandReader/" 
-                image="resources/img/Summoner's-Rift.webP" 
-                alt="Summoner's Rift">
-                <span slot="name" class="name">LOR Hand Tracker</span>
-                <span slot="description" class="description">Front-End</span>
-              </project-card>
-            
-              <project-card class="recentproject shrink-img" link="https://eswtritons.wordpress.com/urban-wind-power-charging-station/" 
-                image="resources/img/vawt.webP" 
-                alt="Vawt Wind Turbine">
-                <span slot="name" class="name">Vawt Wind Turbine</span>
-                <span slot="description" class="description">Data Lead</span>
-              </project-card>
-            
-              <project-card class="recentproject shrink-img" link="./tec.html" 
-                image="resources/img/tec.webp" 
-                alt="Triton Energy Climate">
-                <span slot="name" class="name">Triton Energy Climate</span>
-                <span slot="description" class="description">Tech Lead / Project Manager</span>
-              </project-card>
+              <!-- `script.js` will populate this section -->
             </section>
     </main>
     <footer>
