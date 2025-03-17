@@ -1,164 +1,211 @@
+/* introsection.css */
+:root {
+  --faded-gray-light: #e0e0e0;  /* Lighter gray for light mode */
+  --faded-gray-dark: #666666;  /* Darker gray for dark mode */
+  --background-black: color(display-p3 0.105 0.105 0.105);
+  --light-background: white;
+  --light-text: black;
+  --dark-background: #121212; /* Darker background for dark mode */
+  --dark-text: white;
+}
+
 .introsection {
-    background-color: var(--background-black, #1b1b1b);
-    border-radius: 20px;
-    padding: 3em 2.5em;
-    display: grid;
-    grid-template-columns: 10fr 1fr; 
-    grid-template-rows: 1fr 2fr;
-    border: 2px solid #262626;
+  background-color: var(--dark-background); /* Default dark background */
+  border-radius: 20px;
+  padding: 3em 2.5em;
+  display: grid;
+  grid-template-columns: 10fr 1fr; 
+  grid-template-rows: 1fr 2fr;
+  border: 2px solid var(--faded-gray-dark); /* Darker border for dark mode */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+/* Light mode overrides */
+body.light-mode .introsection {
+  background-color: var(--light-background); /* Light background */
+  border-color: var(--faded-gray-light); /* Lighter border for light mode */
 }
 
 .fadedgray {
-    color: var(--faded-gray, #c0c0c0);
-  }
-  
-  .first_row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--background-black, #1b1b1b);
-  }
-  
-  .name {
-    font-size: 3em;
-  }
-  
-  #grayCircle {
-    width: 12em;
-    height: 12em;
-    background-color: #2c2c2c;
-    border-radius: 50%;
+  color: var(--faded-gray-dark); /* Default gray color */
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } 
+/* Light mode fadedgray */
+body.light-mode .fadedgray {
+  color: var(--faded-gray-light); /* Lighter gray for light mode */
+}
 
-  #portrait {
-    border-radius: 200px;
-    
-  }
+.first_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-background); /* Default dark background */
+  transition: background-color 0.3s;
+}
 
-  
-  #copyemail {
-    background-color: #161616;
-    color: #c0c0c0;
-    
-  }
+body.light-mode .first_row {
+  background-color: var(--light-background); /* Light background for light mode */
+}
 
-  .emailbutton {
-    background-color: #161616;
-    
-  }
+.name {
+  font-size: 3em;
+  color: var(--dark-text); /* Default text color */
+}
 
-  #copybuttoncontainer {
-    border-left: 1px solid #262626;
-    width: 1em;
-    color: #C0C0C0;
-    background-color: #161616;
-    
-  }
+body.light-mode .name {
+  color: var(--light-text); /* Light text for light mode */
+}
 
-  #emailbuttongroup {
-    margin-left: 1em;
-    border: 1.2px solid #262626;
-    
-  }
+#grayCircle {
+  width: 12em;
+  height: 12em;
+  background-color: var(--faded-gray-dark); /* Default gray circle for dark mode */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  #hiremebuttongroup {
-    border: 1.2px solid #161616;
-    
-  }
-  .hireme {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1976d2; /* MUI primary color */
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
+body.light-mode #grayCircle {
+  background-color: var(--faded-gray-light); /* Lighter circle for light mode */
+}
 
-  .hireme:active {
-      background-color: #0d47a1; /* Even darker on click */
-  }
+#portrait {
+  border-radius: 200px;
+}
 
-  @keyframes buttonAnimation {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  /* Apply animation on hover */
-  .introbutton:hover {
-    animation: buttonAnimation 0.5s ease;
-  }
+#copyemail {
+  background-color: var(--faded-gray-dark); /* Default dark background */
+  color: var(--faded-gray-light); /* Light text */
+}
 
-  .emailbutton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #161616; /* Black background */
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  }
+body.light-mode #copyemail {
+  background-color: var(--faded-gray-light); /* Light background */
+  color: var(--faded-gray-dark); /* Dark text */
+}
 
-  .emailbutton:hover {
-      background-color: #0f0f0f; /* Slightly lighter black on hover */
-  }
+.emailbutton {
+  background-color: var(--faded-gray-dark); /* Dark button background */
+  color: var(--light-text); /* Dark text on button */
+}
 
-  .emailbutton:active {
-      background-color: #000000; /* Pure black on click */
-  }
+body.light-mode .emailbutton {
+  background-color: var(--faded-gray-light); /* Lighter button background */
+  color: var(--dark-text); /* Darker text on button */
+}
 
-  .emailbutton:disabled {
-      background-color: #333; /* Dark gray when disabled */
-      cursor: not-allowed;
-      box-shadow: none;
-  }
+#copybuttoncontainer {
+  border-left: 1px solid var(--faded-gray-dark); /* Default border color */
+  width: 1em;
+  color: var(--faded-gray-light); /* Default text color */
+  background-color: var(--faded-gray-dark); /* Dark background */
+}
 
+body.light-mode #copybuttoncontainer {
+  border-left: 1px solid var(--faded-gray-light); /* Light border color */
+  color: var(--faded-gray-dark); /* Dark text */
+  background-color: var(--faded-gray-light); /* Light background */
+}
 
-  #softwareengineer {
-    font-size: 2em;
-  }
-  
-  #description {
-    font-size: 1.6666em;
-    padding: 1em 0 0.8em;
-  }
-  
-  .whitetext {
-    color: #ffffff;
-    font-weight: 600;
-  }
-  
-  .grayCircleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+#emailbuttongroup {
+  margin-left: 1em;
+  border: 1.2px solid var(--faded-gray-dark); /* Default border color */
+}
 
-  .pluscontainer {
-    width: 1em;
-  }
+body.light-mode #emailbuttongroup {
+  border: 1.2px solid var(--faded-gray-light); /* Light border color */
+}
+
+#hiremebuttongroup {
+  border: 1.2px solid var(--faded-gray-dark); /* Default border color */
+}
+
+body.light-mode #hiremebuttongroup {
+  border: 1.2px solid var(--faded-gray-light); /* Light border color */
+}
+
+.hireme {
+  background-color: #1976d2; /* Default button color */
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .hireme {
+  background-color: #2196f3; /* Lighter blue in light mode */
+}
+
+.hireme:active {
+  background-color: #0d47a1; /* Even darker on click */
+}
+
+.introbutton:hover {
+  animation: buttonAnimation 0.5s ease;
+}
+
+.emailbutton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--faded-gray-dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .emailbutton {
+  background-color: var(--faded-gray-light); /* Lighter button in light mode */
+  color: var(--dark-text);
+}
+
+.emailbutton:hover {
+  background-color: #0f0f0f; /* Slightly lighter black on hover */
+}
+
+.emailbutton:active {
+  background-color: #000000; /* Pure black on click */
+}
+
+.emailbutton:disabled {
+  background-color: #333; /* Dark gray when disabled */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+#softwareengineer {
+  font-size: 2em;
+}
+
+#description {
+  font-size: 1.6666em;
+  padding: 1em 0 0.8em;
+}
+
+.whitetext {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.grayCircleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pluscontainer {
+  width: 1em;
+}

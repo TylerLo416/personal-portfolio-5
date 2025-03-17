@@ -1,48 +1,71 @@
 .recentproject {
-    background-color: var(--background-black, #1b1b1b);
-    border-radius: 20px;
-    padding: 4%;
-    border: 2px solid #262626;
-  
-    .top_columns {
-      display: grid;
-      grid-template-columns: 3fr 2fr 1fr;
-    }
-  
-    .right_column {
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .name {
-      color: #FFFFFF;
-      font-size: 2em;
-      font-weight: 600;
-      margin-bottom: .3em;
-    }
-  
-    .description {
-      color: #C0C0C0;
-      font-size: 1.66em;
-      margin: 0;
-      margin-top: 20px;
-    }
-  
-    .img_holder {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      margin-top: 2%;
+  background-color: var(--background-black, #1b1b1b);
+  border-radius: 20px;
+  padding: 4%;
+  border: 2px solid #262626;
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
 
-  
-      #cardimg {
-        width: 45%;
-        height: 45%;
-      }
-    }
-  }
-  #vawt {
-    width: 40%;
-    height: 40%;
-    border-radius: 20px;
-  }
+/* Light mode recentproject */
+body.light-mode .recentproject {
+  background-color: var(--light-background); /* Light background */
+  border: 2px solid var(--faded-gray-light); /* Light border */
+}
+
+.top_columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+}
+
+.right_column {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.name {
+  color: #123456; /* White text color in dark mode */
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: .3em;
+}
+
+
+.description {
+  color: #123456;
+  font-size: 1.66em;
+  margin: 0;
+  margin-top: 20px;
+}
+
+/* Light mode description */
+body.light-mode .recentproject .description {
+  color: var(--faded-gray-light); /* Light text in light mode */
+}
+
+.img_holder {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+#cardimg {
+  width: 45%;
+  height: 45%;
+}
+
+#vawt {
+  width: 40%;
+  height: 40%;
+  border-radius: 20px;
+}
+
+/* Optional: Adjust image holder for light mode */
+body.light-mode .img_holder {
+  background-color: var(--faded-gray-light); /* Optional light background for images */
+}
+
+/* Transition for smooth effect in light mode */
+body.light-mode .img_holder #cardimg {
+  border: 1px solid var(--faded-gray-light); /* Optional light border for images */
+}

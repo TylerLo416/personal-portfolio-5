@@ -1,21 +1,34 @@
+/* Root Variables */
+:root {
+    --faded-gray-light: #e0e0e0;
+    --faded-gray-dark: #666666;
+    --background-black: color(display-p3 0.105 0.105 0.105);
+    --light-background: white;
+    --light-text: black;
+    --dark-background: #121212;
+    --dark-text: white;
+}
+
 nav {
     display: flex;
     justify-content: center; /* Centers the navbar */
     align-items: center;
-    background-color: black;
-    
+    background-color: var(--dark-background); /* Default to dark background */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Light mode nav */
+body.light-mode nav {
+    background-color: var(--light-background); /* Light background */
 }
 
 .navbar {
     position: sticky;
-    background: var(--background-black, #1b1b1b);
-    border: 2px solid #262626;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border-radius: 30px; /* Adjust the value to control the roundness */
+    background: var(--dark-background); /* Default dark background */
+    border: 2px solid var(--faded-gray-dark); /* Dark border */
+    border-radius: 30px;
     z-index: 2;
     padding: 0 5%;
-    
     
     display: flex;
     justify-content: space-between; /* Distributes links evenly */
@@ -24,37 +37,65 @@ nav {
     height: 100%;
     list-style: none;
     min-height: 40px;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
 }
 
+/* Light mode navbar */
+body.light-mode .navbar {
+    background: var(--light-background); /* Light background */
+    border: 2px solid var(--faded-gray-light); /* Light border */
+}
+
+/* Button styles */
 .button {
     color: #1A71C9;
 }
 
+/* Mark styles */
 .mark {
     width: 10dvmin;
     height: 10dvmin;
 }
 
+/* Container styles */
 .container {
     display: flex;
     align-items: center;
-    background-color: #161616;
-    border: 1px solid #262626;
-
+    background-color: var(--faded-gray-dark); /* Dark background for container */
+    border: 1px solid var(--faded-gray-dark);
     padding-top: .2em;
     padding-bottom: .2em;
     padding-left: 1em;
     border-radius: 14px;
     height: 1.3em;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
 }
 
+/* Light mode container */
+body.light-mode .container {
+    background-color: var(--faded-gray-light); /* Light background for container */
+    border: 1px solid var(--faded-gray-light); /* Light border */
+}
+
+/* Text styles */
 .text {
-    color: #C0C0C0;
+    color: var(--faded-gray-dark); /* Default gray text for dark mode */
 }
 
+/* Light mode text */
+body.light-mode .text {
+    color: var(--faded-gray-light); /* Light text color for light mode */
+}
+
+/* Circle styles */
 .circle {
-    width: 1em; /* Adjust circle size as needed */
-    height: 1em; /* Adjust circle size as needed */
+    width: 1em;
+    height: 1em;
     background-color: #68C0F1; /* Blue color */
     border-radius: 50%; /* Make it a circle */
+}
+
+/* Optional: Light/dark mode icon toggle (for sun/moon or similar) */
+body.light-mode .circle {
+    background-color: #FFD700; /* Gold for light mode (for example) */
 }

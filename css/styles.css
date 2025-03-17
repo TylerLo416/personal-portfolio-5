@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
-    --faded-gray: color-mix(in srgb, white 78%, black 22%);
-    --background-black: color(display-p3 0.105 0.105 0.105);;
+    --faded-gray-light: #e0e0e0; /* Lighter gray for light mode */
+    --faded-gray-dark: #666666;  /* Darker gray for dark mode */
+    --background-black: color(display-p3 0.105 0.105 0.105);
+    --light-background: white;
+    --light-text: black;
+    --dark-background: black;
+    --dark-text: white;
 }
 
 html {
@@ -15,15 +20,27 @@ html {
     gap: 20px;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .twocolumn {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 }
 
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background-color: black;
+    background-color: var(--dark-background); /* Default to dark mode */
+    color: var(--dark-text); /* Default to dark text */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.light-mode {
+    background-color: var(--light-background);
+    color: var(--light-text);
+}
+
+body.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
 }
 
 a {
@@ -31,5 +48,65 @@ a {
 }
 
 hr {
-    border: 1px solid black;
+    border: 1px solid var(--faded-gray-dark); /* Use a darker gray in dark mode */
+}
+
+/* Light and dark mode styles */
+body.light-mode {
+    background-color: var(--light-background);
+    color: var(--light-text);
+}
+
+body.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+body.light-mode hr {
+    border-color: var(--faded-gray-light); /* Lighter gray for light mode */
+}
+
+body.dark-mode hr {
+    border-color: var(--faded-gray-dark); /* Darker gray for dark mode */
+}
+
+/* Toggle button styles */
+#mode-toggle {
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Icon styles */
+.icon {
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide moon icon in light mode, hide sun icon in dark mode */
+body.light-mode #moon-icon {
+    opacity: 0;
+}
+
+body.dark-mode #sun-icon {
+    opacity: 0;
+}
+
+#mode-text {
+    display: none;
+}
+
+/* Optional styles to enhance UX */
+button:focus {
+    outline: none;
+}
+
+#jobavailability {
+    color: #123456;
 }

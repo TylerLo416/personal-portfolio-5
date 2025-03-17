@@ -75,13 +75,8 @@ input:required:focus:placeholder-shown {
     border-color: red; /* Highlight required fields */
 }
 
-.error-message {
-    display: block;
-    color: red;
-}
-
-textarea:invalid + .error-message {
-    display: none; /* Show error message when input is invalid */
+#comments:placeholder-shown {
+    font-style: italic;
 }
 
 button {
@@ -105,4 +100,43 @@ button:hover {
 
 button:active {
     background-color: #0d47a1;
+}
+
+#error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+input:invalid + #error-message {
+    display: block; /* Show error when invalid */
+}
+input:valid + #error-message {
+    display: none; /* Hide error when valid */
+}
+
+
+.flashing {
+    animation: flash 0.5s ease-in-out;
+}
+
+@keyframes flash {
+    0% { border-color: red; }
+    50% { border-color: transparent; }
+    100% { border-color: red; }
+}
+
+
+#countdown-message {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.warning {
+    color: orange;
+}
+
+.error {
+    color: red;
 }
