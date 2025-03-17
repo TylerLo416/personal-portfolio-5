@@ -8,6 +8,10 @@
     display: grid;
     grid-template-columns: 3fr 2fr 1fr;
   }
+  .shrink-img {
+    width: 150px;  /* Adjust to the desired size */
+    height: 15px;
+}
 
   .right_column {
     display: flex;
