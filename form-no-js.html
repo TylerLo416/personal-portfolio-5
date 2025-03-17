@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+    <nav>
+        <a href="./index.html">
+            <img class="mark" src="./resources/img/Mark.webP" alt="logo">
+        </a>
+        <ul class="navbar">
+          <li><a class="button" href="./index.html#introsection">About</a></li>
+          <li><a class="button" href="./index.html#portfolio">Portfolio</a></li>
+          <li><a class="button" href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="formsection">
+        <form id="form" action="https://httpbin.org/post" method="POST">
+            <label for="message">Contact Me:</label>
+            <textarea id="name" name="name" rows="1" cols="50" placeholder="Name"></textarea>
+            <input id="email" name="email" type="email" placeholder="Email" required>
+            <input id="comments" name="comments" type="text" pattern="[\x00-\x7F]*"  placeholder="Type your message here...">
+            <span class="error-message">Only ASCII characters are allowed</span>
+            <input type="hidden" name="possible_bot "id="possible_bot" value="true">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
