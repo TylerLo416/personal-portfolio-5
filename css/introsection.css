@@ -162,3 +162,11 @@
 .pluscontainer {
   width: 1em;
 }
+
+.availability-circle {
+  width: 1em; /* Adjust circle size as needed */
+  height: 1em; /* Adjust circle size as needed */
+  background-color: #f5426c; /* Blue color */
+  border-radius: 50%; /* Make it a circle */
+  margin-right: 1em;
+}
