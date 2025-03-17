@@ -98,5 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         loaded = true;
     });
-})
+});
+function copyEmail() {
+    navigator.clipboard.writeText("lotyler416@gmail.com");
+}
     

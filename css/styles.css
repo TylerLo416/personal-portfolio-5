@@ -24,6 +24,8 @@ html {
 body {
     font-family: 'Inter', Arial, sans-serif;
     background-color: black;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 a {
