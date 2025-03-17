@@ -1,0 +1,147 @@
+/* Group similar styles using :is() */
+.is-blue, .is-white {
+    color: var(--primary-color, #68C0F1);
+  }
+  
+  .workexperience :is(.title, .jobtitle) {
+    font-size: 1.5em;
+  }
+  
+  /* Use :where() to group hover and active states for buttons */
+  :where(.arrow-button:hover, .arrow-button:active) {
+    background-color: #1565c0; /* Darker shade on hover */
+  }
+  
+  .title, .jobtitle {
+    font-weight: 500;
+    font-size: 1em;
+  }
+  
+  /* Use :not() to style .title except for .blue_title */
+  .title:not(.blue_title) {
+    color: white;
+  }
+  
+  /* Use :has() to style the .header_container if it contains an arrow-button */
+  .header_container:has(.arrow-button) {
+    background-color: #333;
+    border: 2px solid #444;
+  }
+  
+  /* Base styles for .recentwork */
+  .recentwork {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    background-color: var(--background-black, #1b1b1b);
+    border-radius: 20px;
+    padding: 5%;
+    border: 2px solid #262626;
+  }
+  
+  #header {
+    color: #C0C0C0;
+    font-size: 2em;
+  }
+  
+  .workexperience {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2em;
+    padding-bottom: .2em;
+    padding-top: .9em;
+  }
+  
+  .title {
+    font-size: 1.5em;
+  }
+  
+  .blue_title {
+    color: #68C0F1;
+  }
+  
+  .white_title {
+    color: white;
+  }
+  
+  .jobtitle {
+    padding-bottom: .4em;
+    font-weight: 500;
+    font-size: 1em;
+  }
+  
+  .date_company_color {
+    color: #C0C0C0;
+    font-size: .7em;
+    list-style: none;
+  }
+  
+  .company {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .7em;
+  }
+  
+  .circle {
+    width: 1em; /* Adjust circle size as needed */
+    height: 1em; /* Adjust circle size as needed */
+    background-color: #C0C0C0; /* Blue color */
+    border-radius: 50%; /* Make it a circle */
+    margin-right: 1em;
+  }
+  
+  .header_container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px; /* Add padding */
+    box-sizing: border-box;
+  }
+  
+  /* Style the arrow button */
+  .arrow-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1976d2; /* Primary color */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 50%; /* Make the button circular */
+    padding: 16px; /* Adjust padding to ensure the button is large enough to be circular */
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 60px; /* Set a fixed width */
+    height: 60px; /* Set a fixed height */
+  }
+  
+  .arrow-button::after {
+    content: '';
+    position: absolute;
+    top: 10px; /* Adjust position to be more centered */
+    right: 10px; /* Adjust position to be more centered */
+    width: 12px; /* Arrow width */
+    height: 12px; /* Arrow height */
+    border-top: 3px solid white; /* Thicker arrow line */
+    border-right: 3px solid white; /* Thicker arrow line */
+    transform: rotate(45deg); /* Rotate the arrow to point to top-right */
+  }
+  
+  .arrow-button:hover {
+    background-color: #1565c0; /* Darker shade on hover */
+  }
+  
+  .arrow-button:active {
+    background-color: #0d47a1; /* Even darker on click */
+  }
+  
+  .arrow-button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  

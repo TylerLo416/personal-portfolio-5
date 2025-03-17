@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./resources/img/Mark.webP">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./navbar.css">
-    <link rel="stylesheet" href="./introsection.css">
-    <link rel="stylesheet" href="./recentwork.css">
-    <link rel="stylesheet" href="./skills.css">
-    <link rel="stylesheet" href="./projects.css">
-    <script src="./project-card.js"></script>
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/introsection.css">
+    <link rel="stylesheet" href="./css/recentwork.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -25,22 +24,20 @@
               <li><a class="button" href="#introsection">About</a></li>
               <li><a class="button" href="#portfolio">Portfolio</a></li>
               <li><a class="button" href="./contact.html">Contact</a></li>
-              <li><button type="button" class="button" id="load-local">Load Local</button></li>
-              <li><button type="button" class="button" id="load-remote">Load Remote</button></li>
             </ul>
           </nav>
           <hr>
           <section class="introsection" id="introsection">
               <h2 class="fadedgray">Software Engineer</h2>
               <aside class="container">
-                <div class="availability-circle"></div>
-                <p class="text" id="jobavailability">Available for Job</p>
+                <div class="circle"></div>
+                <p class="text">Available for Job</p>
               </aside>
               <div class="second_row">
                 <h1 class="name whitetext">I'm Tyler Lo</h1>
                 <h3 class="fadedgray">  I develop Front-End + Full-<br>
                 Stack Applications</h3>
-                <button class="introbutton hireme whitetext" onclick="window.location.href='./contact.html'">Hire Me</button>
+                <button class="introbutton hireme whitetext" onclick="window.location.href='#contact'">Hire Me</button>
                 <button class="introbutton emailbutton fadedgray" onclick="copyEmail()">Copy Email</button>
               </div>
               <div id="grayCircle">
@@ -135,7 +132,46 @@
             </section>
             <hr>
             <section class="twocolumn" id="portfolio">
-              <!-- `script.js` will populate this section -->
+              <article class="recentproject">
+                  <div class="top_columns">
+                    <strong class="name">LOR Hand Tracker</strong>
+                    <div></div>
+                    <a href="https://tylerlo416.github.io/LORHandReader/">
+                      <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+                    </a>   
+                  </div>
+                  <p class="description"> Front-End</p>
+                  <div class="img_holder">
+                    <img id="cardimg" src="resources/img/Summoner's-Rift.webP" alt="card image">
+                    <!-- img from Riot Games API (all other images are Figma SVG's / personal)-->
+                  </div>
+              </article>
+              <article class="recentproject">
+                  <div class="top_columns">
+                    <strong class="name">Vawt Wind Turbine</strong>
+                    <div></div>
+                    <a href="https://eswtritons.wordpress.com/urban-wind-power-charging-station/">
+                      <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+                    </a> 
+                  </div>
+                  <p class="description"> Data Lead</p>
+                  <div class="img_holder">
+                    <img id="vawt" src="resources/img/vawt.webP" alt="vawt image">
+                  </div>
+              </article>
+              <article class="recentproject">
+                <div class="top_columns">
+                  <strong class="name">Triton Energy Climate</strong>
+                  <div></div>
+                  <a href="./tec.html">
+                    <img src="resources/img/circlearrow.svg" alt="Arrow" class="arrow-icon">
+                  </a> 
+                </div>
+                <p class="description"> Tech Lead / Project Manager</p>
+                <div class="img_holder">
+                  <img id="vawt" src="resources/img/tec.webp" alt="vawt image">
+                </div>
+              </article>
             </section>
     </main>
     <footer>
