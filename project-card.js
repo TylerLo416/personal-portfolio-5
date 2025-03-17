@@ -34,10 +34,17 @@ class ProjectCard extends HTMLElement {
             }
             
             .name {
-                font-size: 18px;
+                color: #FFFFFF;
+                font-size: 1em;
+                font-weight: 600;
+                margin-bottom: .3em;
             }
+
             .description {
-                font-size: 15px;
+                color: #C0C0C0;
+                font-size: .8em;
+                margin: 0;
+                margin-top: 20px;
             }
 
             .img_holder {

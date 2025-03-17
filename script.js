@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let loaded = false;
     //load content into local storage
     if (!localStorage.getItem("projects")) {
         const projects = [
@@ -30,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //function for "Load local storage" button
     document.getElementById("load-local").addEventListener("click", async () => {
+        if(loaded == true) {
+            return;
+        }
         const portfolioSection = document.getElementById("portfolio");
     
         // Get projects from localStorage
@@ -37,10 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
         projects.forEach((project) => {
             const card = document.createElement("project-card");
+            card.setAttribute("class", "recentproject"); // 🔥 Fix: Ensure class is added
             card.setAttribute("link", project.link);
             card.setAttribute("image", project.image);
             card.setAttribute("alt", project.alt);
-            
+    
             card.innerHTML = `
                 <span slot="name" class="name">${project.name}</span>
                 <span slot="description" class="description">${project.description}</span>
@@ -48,12 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
             portfolioSection.appendChild(card);
         });
+        loaded = true;
     });
+    
 
 
     //function for "Load Remote" button
     document.getElementById("load-remote").addEventListener("click", async () => {
-        console.log("hi");
+        if(loaded == true) {
+            return;
+        }
         const jsonBinUrl = "https://api.jsonbin.io/v3/b/67d779168a456b79667730e3"; // Replace with your JSONBin.io bin URL
         const apiKey = "$2a$10$DKCm5ENGOma0Uny1M/la2u9to8ExelurQ/R9hyxfvA6NP454pNbWa"; // Add your API key if needed
     
@@ -87,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
         console.error("Error fetching project data:", error);
         }
+        loaded = true;
     });
 })
     
